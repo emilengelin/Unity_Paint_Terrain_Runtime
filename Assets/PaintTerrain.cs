@@ -15,8 +15,6 @@ public class PaintTerrain : MonoBehaviour {
     [Range(1, 100)] public int maxRadius = 10;
     public int hillAmount = 1000;
 
-    float a = 0;
-
     float[,] heights;
 
     int heightMapWidth, heightmapHeight;
@@ -29,8 +27,8 @@ public class PaintTerrain : MonoBehaviour {
         CreateMultipleHills(hillAmount);
     }
 	
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.F))
+    void Update () {
+	if (Input.GetKeyDown(KeyCode.F))
         {
             FlattenTerrain();
         }
@@ -39,7 +37,7 @@ public class PaintTerrain : MonoBehaviour {
         {
             CreateMultipleHills(hillAmount);
         }
-	}
+    }
 
     void CreateMultipleHills(int amount)
     {
