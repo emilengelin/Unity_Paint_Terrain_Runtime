@@ -109,10 +109,10 @@ public class PaintTerrain : MonoBehaviour {
     public void CreateHill(int x, int y, float height, int radius)
     {
         int diameter = radius * 2;
-        int heightsCenteX = radius;
-        int heightsCenteY = radius;
-        int baseX = x - heightsCenteX;
-        int baseY = y - heightsCenteY;
+        int heightsCenterX = radius;
+        int heightsCenterY = radius;
+        int baseX = x - heightsCenterX;
+        int baseY = y - heightsCenterY;
         heights = terrainData.GetHeights(baseX, baseY, diameter, diameter);
 
         Vector2 controlPoint1 = new Vector2(0.52f, 0.06f);
@@ -122,7 +122,7 @@ public class PaintTerrain : MonoBehaviour {
         {
             for (int b = 0; b < diameter; b++)
             {
-                float distanceFromCenter = Mathf.Sqrt(Mathf.Pow((heightsCenteY - b), 2) + Mathf.Pow((heightsCenteX - a), 2));
+                float distanceFromCenter = Mathf.Sqrt(Mathf.Pow((heightsCenterY - b), 2) + Mathf.Pow((heightsCenterX - a), 2));
                 float time = Mathf.Max(1 - (distanceFromCenter / radius), 0);
                 Vector2 bezierPoint = BezierCurve(time, new Vector2(0, 0), controlPoint1, controlPoint2, new Vector2(1, 1));
 
