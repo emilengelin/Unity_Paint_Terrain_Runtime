@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class PaintTerrain : MonoBehaviour {
+public class PaintTerrain : MonoBehaviour
+{
 
     public Terrain terrain;
     public TerrainData terrainData;
@@ -101,6 +102,7 @@ public class PaintTerrain : MonoBehaviour {
                 heights[x, y] = 0;
             }
         }
+	
         terrain.terrainData.SetHeights(0, 0, heights);
     }
 
@@ -175,4 +177,5 @@ public class PaintTerrain : MonoBehaviour {
     {
         return Mathf.Pow(1 - t, 3) * pOne + 3 * Mathf.Pow(1 - t, 2) * t * pTwo + 3 * (1 - t) * t * t * pThree + Mathf.Pow(t, 3) * pFour;
     }
+    
 }
