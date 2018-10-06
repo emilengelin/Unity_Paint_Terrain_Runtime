@@ -142,7 +142,6 @@ public class PaintTerrain : MonoBehaviour
 
     private void Smooth()
     {
-
         float[,] height = terrain.terrainData.GetHeights(0, 0, terrain.terrainData.heightmapWidth,
                                           terrain.terrainData.heightmapHeight);
         float k = 0.5f;
